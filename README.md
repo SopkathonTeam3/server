@@ -49,7 +49,7 @@
 <br>
 
 ## 📌 ERD
-<img width="701" alt="스크린샷 2023-05-20 오후 9 51 02 (1)" src="https://github.com/TeamNobar/Nobar-Server/assets/89137120/59cf3bf5-ea36-482a-bf71-fd4ce59d8e7c">
+<img width="942" alt="스크린샷 2023-05-20 오후 11 26 25" src="https://github.com/SopkathonTeam3/server/assets/77621712/3dd71230-7d0a-4c5c-b66b-7c5a96c2ccf1">
 
 
 
