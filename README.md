@@ -50,7 +50,8 @@
 <br>
 
 ## 📌 ERD
-<img width="942" alt="스크린샷 2023-05-20 오후 11 26 25" src="https://github.com/SopkathonTeam3/server/assets/77621712/3dd71230-7d0a-4c5c-b66b-7c5a96c2ccf1">
+
+<img width="697" alt="스크린샷 2023-05-21 오전 12 43 00" src="https://github.com/SopkathonTeam3/server/assets/77621712/8acf9219-dcbb-410c-a7a4-11dafee15919">
 
 
 
