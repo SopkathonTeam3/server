@@ -19,7 +19,7 @@ public class RoomService {
         return RoomResponseDto.of(room);
     }
 
-    private Room findRoomWithId(final Long roomId) {
+    public Room findRoomWithId(final Long roomId) {
         return roomRepository.findById(roomId).orElseThrow(() -> new NotFoundException(NOT_FOUND));
     }
 }
