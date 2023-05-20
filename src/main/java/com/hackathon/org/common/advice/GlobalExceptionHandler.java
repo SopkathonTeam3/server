@@ -2,7 +2,7 @@ package com.hackathon.org.common.advice;
 
 import com.hackathon.org.common.error.BaseException;
 import com.hackathon.org.common.status.ErrorStatus;
-import com.hackathon.org.controller.dto.ApiResponseDTO;
+import com.hackathon.org.common.dto.ApiResponseDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
