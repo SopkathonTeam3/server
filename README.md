@@ -11,6 +11,7 @@
 
 - 임승하
 - 진승희
+![A6A168EB-13C4-478F-87DC-0149BF1D429C](https://github.com/SopkathonTeam3/server/assets/77621712/5167d4ef-c5f0-4b74-9385-9007cbc724d7)
 
 
 
