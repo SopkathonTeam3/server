@@ -1,18 +1,15 @@
 package com.hackathon.org.domain;
 
 import java.time.LocalDate;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import net.bytebuddy.implementation.bind.annotation.Default;
+import org.hibernate.annotations.ColumnDefault;
 import org.springframework.data.annotation.CreatedDate;
 
 @Entity
@@ -32,6 +29,7 @@ public class Room {
     @CreatedDate
     private LocalDate createdAt;
 
+    @ColumnDefault("false")
     private boolean isPublic;
 
     public boolean getIsPublic() {

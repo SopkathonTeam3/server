@@ -1,6 +1,6 @@
 package com.hackathon.org.service;
 
-import com.hackathon.org.controller.dto.ReadBackgroundColorDTO;
+import com.hackathon.org.controller.dto.ReadBackgroundColorResponseDTO;
 import com.hackathon.org.repository.BackgroundColorRepository;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -15,11 +15,11 @@ public class BackgroundColorService {
 
     private final BackgroundColorRepository backgroundColorRepository;
 
-    public List<ReadBackgroundColorDTO> getBackgroundColors() {
+    public List<ReadBackgroundColorResponseDTO> getBackgroundColors() {
         return backgroundColorRepository
                 .findAll()
                 .stream()
-                .map(ReadBackgroundColorDTO::from)
+                .map(ReadBackgroundColorResponseDTO::from)
                 .collect(Collectors.toList());
     }
 }

@@ -7,12 +7,12 @@ import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
-public class ReadBackgroundColorDTO {
+public class ReadBackgroundColorResponseDTO {
     private final Long backgroundColorId;
     private final String backgroundColorCode;
 
-    public static ReadBackgroundColorDTO from (BackgroundColor backgroundColor) {
-        return new ReadBackgroundColorDTO(
+    public static ReadBackgroundColorResponseDTO from (BackgroundColor backgroundColor) {
+        return new ReadBackgroundColorResponseDTO(
                 backgroundColor.getBackgroudColorId(),
                 backgroundColor.getBackgroudColorCode()
         );
