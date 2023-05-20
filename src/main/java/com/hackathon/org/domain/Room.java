@@ -1,5 +1,6 @@
 package com.hackathon.org.domain;
 
+import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -12,6 +13,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
 
 @Entity
 @Getter
@@ -27,4 +29,8 @@ public class Room {
     @JoinColumn(name = "user_ID")
     private User user;
 
+    @CreatedDate
+    private LocalDate createdAt;
+
+    private boolean isPublic;
 }
