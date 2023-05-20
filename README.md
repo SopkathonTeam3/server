@@ -1,12 +1,12 @@
-# SOPTKATHON_web_2_Server
+# SOPTKATHON_web_3_Server
 
-> 32th SOPTKATHON_web_2_Server <br>
+> 32th SOPTKATHON_web_3_Server <br>
 >
 > 솝커톤 웹 2조 서버
 
 <br>
 
-## 🖤 SOPTKATHON Web 2_Server Developers
+## 🖤 SOPTKATHON Web 3_Server Developers
 
 
 - 임승하
