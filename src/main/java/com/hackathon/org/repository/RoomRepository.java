@@ -1,4 +1,7 @@
 package com.hackathon.org.repository;
 
-public interface RoomRepository {
+import com.hackathon.org.domain.Room;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RoomRepository extends JpaRepository<Room, Long> {
 }

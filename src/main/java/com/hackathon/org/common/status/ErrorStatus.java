@@ -15,6 +15,9 @@ public enum ErrorStatus {
 
     INVALID_ID(HttpStatus.NOT_FOUND, "잘못된 id 정보"),
 
+    FAILE_TO_REGISTER(HttpStatus.INTERNAL_SERVER_ERROR, "등록 실패"),
+
+
 
     ;
 

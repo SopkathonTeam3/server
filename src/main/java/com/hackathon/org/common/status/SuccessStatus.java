@@ -15,6 +15,9 @@ public enum SuccessStatus {
     EVENT_SUCCESS(HttpStatus.OK, "이벤트 조회 성공"),
 
     READ_SUCCESS(HttpStatus.OK, "조회 성공"),
+
+    POST_SUCCESS(HttpStatus.CREATED, "조회 성공"),
+
     ;
 
 

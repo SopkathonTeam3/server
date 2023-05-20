@@ -3,6 +3,7 @@ package com.hackathon.org.common.advice;
 import com.hackathon.org.common.error.BaseException;
 import com.hackathon.org.common.status.ErrorStatus;
 import com.hackathon.org.common.dto.ApiResponseDTO;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -11,10 +12,11 @@ import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.multipart.MultipartException;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
-@RestController
+@RestControllerAdvice
 public class GlobalExceptionHandler {
 
     /*
