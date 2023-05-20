@@ -25,8 +25,8 @@ public class User {
     private UUID userId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "background_image_ID")
-    private BackgroundImage backgroundImage;
+    @JoinColumn(name = "background_color_id")
+    private BackgroundColor backgroundColor;
 
     private String name;
 }
