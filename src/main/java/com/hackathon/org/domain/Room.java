@@ -33,4 +33,8 @@ public class Room {
     private LocalDate createdAt;
 
     private boolean isPublic;
+
+    public boolean getIsPublic() {
+        return isPublic;
+    }
 }
