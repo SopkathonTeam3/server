@@ -15,10 +15,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class BackgroundImage {
+public class BackgroundColor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long backgroundImageId;
+    private Long backgroudColorId;
 
-    private String backgroundImageUrl;
+    private String backgroudColorCode;
 }
