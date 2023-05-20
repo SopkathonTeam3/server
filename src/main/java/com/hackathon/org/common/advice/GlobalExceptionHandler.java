@@ -1,8 +1,8 @@
 package com.hackathon.org.common.advice;
 
-import com.hackathon.org.common.error.BaseException;
-import com.hackathon.org.common.status.ErrorStatus;
 import com.hackathon.org.common.dto.ApiResponseDTO;
+import com.hackathon.org.common.error.model.BaseException;
+import com.hackathon.org.common.status.ErrorStatus;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -21,7 +21,7 @@ public class GlobalExceptionHandler {
         커스텀 에러 핸들러
      */
     @ResponseStatus(HttpStatus.CONFLICT)
-    @ExceptionHandler({ BaseException.class })
+    @ExceptionHandler({BaseException.class})
     protected ApiResponseDTO handleCustomException(BaseException exception) {
         return ApiResponseDTO.error(exception.getStatus());
     }
@@ -30,16 +30,9 @@ public class GlobalExceptionHandler {
         bad request 핸들러
      */
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ExceptionHandler({
-            MissingServletRequestParameterException.class,
-            MissingRequestHeaderException.class,
-            IllegalStateException.class,
-            IllegalArgumentException.class,
-            HttpMessageNotReadableException.class,
-            MissingServletRequestParameterException.class,
-            MultipartException.class,
-            NoHandlerFoundException.class,
-    })
+    @ExceptionHandler({MissingServletRequestParameterException.class, MissingRequestHeaderException.class,
+            IllegalStateException.class, IllegalArgumentException.class, HttpMessageNotReadableException.class,
+            MissingServletRequestParameterException.class, MultipartException.class, NoHandlerFoundException.class,})
     ApiResponseDTO serverErrorHandler(Exception exception) {
         return ApiResponseDTO.error(HttpStatus.BAD_REQUEST, exception.getMessage());
     }
@@ -59,7 +52,7 @@ public class GlobalExceptionHandler {
         all exception 핸들러
      */
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    @ExceptionHandler({ Exception.class })
+    @ExceptionHandler({Exception.class})
     protected ApiResponseDTO handleServerException(Exception exception) {
         return ApiResponseDTO.error(ErrorStatus.INTERNAL_SERVER_ERROR);
     }

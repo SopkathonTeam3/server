@@ -1,4 +1,4 @@
-package com.hackathon.org.common.error;
+package com.hackathon.org.common.error.model;
 
 import com.hackathon.org.common.status.ErrorStatus;
 import lombok.AllArgsConstructor;

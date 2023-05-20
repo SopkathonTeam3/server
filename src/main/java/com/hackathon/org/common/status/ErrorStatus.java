@@ -15,7 +15,6 @@ public enum ErrorStatus {
 
     INVALID_ID(HttpStatus.NOT_FOUND, "잘못된 id 정보"),
 
-
     ;
 
     private final HttpStatus httpStatus;
