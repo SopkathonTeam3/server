@@ -10,10 +10,10 @@ import java.util.UUID;
 @Getter
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 public class PostUserResponseDTO {
-    private final UUID userId;
+    private final Long userId;
     private final Long roomId;
 
-    public static PostUserResponseDTO from(UUID userId, Long roomId) {
+    public static PostUserResponseDTO from(Long userId, Long roomId) {
         return new PostUserResponseDTO(userId, roomId);
     }
 

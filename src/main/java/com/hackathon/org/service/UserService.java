@@ -5,14 +5,16 @@ import com.hackathon.org.domain.BackgroundColor;
 import com.hackathon.org.domain.Room;
 import com.hackathon.org.domain.User;
 import com.hackathon.org.repository.BackgroundColorRepository;
-import com.hackathon.org.repository.PostRepository;
 import com.hackathon.org.repository.RoomRepository;
+import static com.hackathon.org.common.status.ErrorStatus.NOT_FOUND;
+
+import com.hackathon.org.common.error.model.NotFoundException;
+import com.hackathon.org.controller.dto.UserResponseDto;
 import com.hackathon.org.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 
-import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -31,7 +33,7 @@ public class UserService {
                 .backgroundColor(backgroundColor)
                 .build();
 
-        UUID userId = userRepository.save(newUser).getUserId();
+        Long userId = userRepository.save(newUser).getUserId();
 
         Room newRoom = Room.builder()
                 .user(newUser)
@@ -43,4 +45,13 @@ public class UserService {
 
     }
 
+    public UserResponseDto findUser(final Long userId) {
+        User user = findUserWithId(userId);
+        userRepository.findAll().forEach(u -> System.out.println(user.getUserId()));
+        return UserResponseDto.of(user);
+    }
+
+    private User findUserWithId(final Long userId) {
+        return userRepository.findById(userId).orElseThrow(() -> new NotFoundException(NOT_FOUND));
+    }
 }

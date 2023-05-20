@@ -31,4 +31,8 @@ public class Room {
 
     @ColumnDefault("false")
     private boolean isPublic;
+
+    public boolean getIsPublic() {
+        return isPublic;
+    }
 }
