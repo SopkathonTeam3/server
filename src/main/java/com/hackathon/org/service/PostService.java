@@ -38,7 +38,11 @@ public class PostService {
     public void register(final Long userId, final Long roomId, final PostRegisterDto registerDto) {
         userService.findUser(userId);
         Room room = roomService.findRoomWithId(roomId);
-        Post post = Post.builder().room(room).content(registerDto.getContent()).build();
+        Post post = Post.builder()
+                .room(room)
+                .firstAnswer(registerDto.getFirstAnswer())
+                .secondAnswer(registerDto.getSecondAnswer())
+                .build();
         postRepository.save(post);
     }
 }

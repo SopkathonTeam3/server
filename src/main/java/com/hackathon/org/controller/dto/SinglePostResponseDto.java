@@ -11,9 +11,14 @@ import lombok.Getter;
 @Builder
 public class SinglePostResponseDto {
     private Long postId;
-    private String content;
+    private String firstAnswer;
+    private String secondAnswer;
 
     public static SinglePostResponseDto of(Post post) {
-        return SinglePostResponseDto.builder().postId(post.getPostId()).content(post.getContent()).build();
+        return SinglePostResponseDto.builder()
+                .postId(post.getPostId())
+                .firstAnswer(post.getFirstAnswer())
+                .secondAnswer(post.getSecondAnswer())
+                .build();
     }
 }

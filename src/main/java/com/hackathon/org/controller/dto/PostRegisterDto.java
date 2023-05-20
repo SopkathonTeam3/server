@@ -8,5 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PostRegisterDto {
-    private String content;
+    private String firstAnswer;
+    private String secondAnswer;
 }
