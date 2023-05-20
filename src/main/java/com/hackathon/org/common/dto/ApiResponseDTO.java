@@ -20,6 +20,10 @@ public class ApiResponseDTO<T> {
         return new ApiResponseDTO<>(successStatus.getHttpStatus().value(), successStatus.getMessage(), data);
     }
 
+    public static ApiResponseDTO success(SuccessStatus successStatus) {
+        return new ApiResponseDTO<>(successStatus.getHttpStatus().value(), successStatus.getMessage());
+    }
+
     public static ApiResponseDTO error(ErrorStatus errorStatus) {
         return new ApiResponseDTO(errorStatus.getHttpStatus().value(), errorStatus.getMessage());
     }

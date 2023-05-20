@@ -18,8 +18,9 @@ public enum SuccessStatus {
 
     POST_SUCCESS(HttpStatus.CREATED, "조회 성공"),
 
-    ;
+    CREATE_SUCCESS(HttpStatus.CREATED, "등록 성공"),
 
+    ;
 
 
     private final HttpStatus httpStatus;
