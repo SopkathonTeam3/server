@@ -14,14 +14,14 @@ import lombok.Getter;
 public class RoomResponseDto {
     private Long roomId;
     private boolean isPublic;
-    private int remainingDays;
+    private long remainingDays;
     private int remainingCode;
 
     public static RoomResponseDto of(Room room) {
-        int dateDifference = RoomUtil.calculateDateDifference(room.getCreatedAt());
-        return RoomResponseDto.builder().roomId(room.getRoomId()).isPublic(room.getIsPublic())
+        long dateDifference = RoomUtil.calculateDateDifference(room.getCreatedAt());
+        return RoomResponseDto.builder().roomId(room.getRoomId()).isPublic(dateDifference <= 0)
                 .remainingDays(dateDifference)
-                .remainingCode(RemainingCode.getRemainingCodeNumberWithDateDifference(dateDifference)).build();
+                .remainingCode(RemainingCode.getRemainingCodeNumber(dateDifference)).build();
 
     }
 }

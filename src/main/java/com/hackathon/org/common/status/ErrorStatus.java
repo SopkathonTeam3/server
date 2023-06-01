@@ -9,13 +9,21 @@ import org.springframework.http.HttpStatus;
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 public enum ErrorStatus {
 
+    /**
+     * 500
+     */
     INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "서버 내부 에러"),
+    FAIL_TO_REGISTER(HttpStatus.INTERNAL_SERVER_ERROR, "등록 실패"),
+    INVALID_DATE_DIFFERENCE(HttpStatus.INTERNAL_SERVER_ERROR, "잘못된 날짜 정보"),
 
+
+    /**
+     * 404
+     */
     NOT_FOUND(HttpStatus.NOT_FOUND, "잘못된 요청"),
-
     INVALID_ID(HttpStatus.NOT_FOUND, "잘못된 id 정보"),
 
-    FAILE_TO_REGISTER(HttpStatus.INTERNAL_SERVER_ERROR, "등록 실패"),
+
     ;
 
     private final HttpStatus httpStatus;
