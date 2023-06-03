@@ -1,11 +1,13 @@
 package com.hackathon.org.domain;
 
-import static com.hackathon.org.common.status.ErrorStatus.NOT_FOUND;
-
 import com.hackathon.org.common.error.model.NotFoundException;
-import java.util.Arrays;
+import com.hackathon.org.utils.RoomUtil;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+
+import java.util.Arrays;
+
+import static com.hackathon.org.common.status.ErrorStatus.INVALID_DATE_DIFFERENCE;
 
 @Getter
 @RequiredArgsConstructor
@@ -17,24 +19,13 @@ public enum RemainingCode {
     private final int minDifferenceRange;
     private final int maxDifferenceRange;
 
-    private static final int EXPIRATION_DATE_MAX_RANGE = 7;
-    private static final int EXPIRATION_DATE_MIN_RANGE = 0;
-
-    // TODO : 추후 예외처리
-    private static RemainingCode getRemainingCodeWithDateDifference(final int dateDifference) {
+    private static RemainingCode getRemainingCodeWithDateDifference(final long dateDifference) {
         return Arrays.stream(values())
                 .filter(v -> v.maxDifferenceRange == dateDifference || v.minDifferenceRange == dateDifference)
-                .findFirst().orElseThrow(() -> new NotFoundException(NOT_FOUND));
+                .findFirst().orElseThrow(() -> new NotFoundException(INVALID_DATE_DIFFERENCE));
     }
 
-    private static int clamp(int dateDifference) {
-        if (dateDifference > EXPIRATION_DATE_MAX_RANGE) {
-            return EXPIRATION_DATE_MAX_RANGE;
-        }
-        return Math.max(dateDifference, EXPIRATION_DATE_MIN_RANGE);
-    }
-
-    public static int getRemainingCodeNumberWithDateDifference(final int dateDifference) {
-        return getRemainingCodeWithDateDifference(clamp(dateDifference)).getRemainingCodeNumber();
+    public static int getRemainingCodeNumber(final long dateDifference) {
+        return getRemainingCodeWithDateDifference(RoomUtil.clampDateRange(dateDifference)).getRemainingCodeNumber();
     }
 }
