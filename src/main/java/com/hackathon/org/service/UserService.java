@@ -1,19 +1,18 @@
 package com.hackathon.org.service;
 
+import com.hackathon.org.common.error.model.NotFoundException;
 import com.hackathon.org.controller.dto.PostUserResponseDTO;
+import com.hackathon.org.controller.dto.UserResponseDto;
 import com.hackathon.org.domain.BackgroundColor;
 import com.hackathon.org.domain.Room;
 import com.hackathon.org.domain.User;
 import com.hackathon.org.repository.BackgroundColorRepository;
 import com.hackathon.org.repository.RoomRepository;
-import static com.hackathon.org.common.status.ErrorStatus.NOT_FOUND;
-
-import com.hackathon.org.common.error.model.NotFoundException;
-import com.hackathon.org.controller.dto.UserResponseDto;
 import com.hackathon.org.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import static com.hackathon.org.common.status.ErrorStatus.NOT_FOUND;
 
 
 @Service

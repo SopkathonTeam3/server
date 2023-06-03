@@ -16,8 +16,6 @@ public enum SuccessStatus {
 
     READ_SUCCESS(HttpStatus.OK, "조회 성공"),
 
-    POST_SUCCESS(HttpStatus.CREATED, "조회 성공"),
-
     CREATE_SUCCESS(HttpStatus.CREATED, "등록 성공"),
 
     ;
