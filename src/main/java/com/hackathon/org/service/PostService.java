@@ -1,18 +1,15 @@
 package com.hackathon.org.service;
 
-import com.hackathon.org.controller.dto.PostListResponseDto;
-import com.hackathon.org.controller.dto.PostRegisterDto;
-import com.hackathon.org.controller.dto.RoomResponseDto;
-import com.hackathon.org.controller.dto.SinglePostResponseDto;
-import com.hackathon.org.controller.dto.UserResponseDto;
+import com.hackathon.org.controller.dto.*;
 import com.hackathon.org.domain.Post;
 import com.hackathon.org.domain.Room;
 import com.hackathon.org.repository.PostRepository;
-import java.util.List;
-import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor

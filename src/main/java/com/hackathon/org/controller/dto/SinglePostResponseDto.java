@@ -1,12 +1,10 @@
 package com.hackathon.org.controller.dto;
 
 import com.hackathon.org.domain.Post;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 
 @Getter
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder
 public class SinglePostResponseDto {

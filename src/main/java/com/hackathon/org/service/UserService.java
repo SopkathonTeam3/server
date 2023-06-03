@@ -12,6 +12,8 @@ import com.hackathon.org.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+
 import static com.hackathon.org.common.status.ErrorStatus.NOT_FOUND;
 
 
@@ -36,6 +38,7 @@ public class UserService {
 
         Room newRoom = Room.builder()
                 .user(newUser)
+                .createdAt(LocalDate.now())
                 .build();
 
         Long roomId = roomRepository.save(newRoom).getRoomId();
